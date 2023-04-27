@@ -58,9 +58,11 @@ Desbloquear un usuario suspendido o bloqueado en Microsoft Active Directory
 Cambia la contraseña de un usuario en Microsoft Active Directory
 |Parámetros|Descripción|ejemplo|
 | --- | --- | --- |
+|Usuario con permisos de administración||DOMAIN\username|
+|Contraseña||password|
+|Server||server|
 |Usuario (DN o nombre principal)||cn=user1,o=test ó username@domain.tld|
 |Nueva Contraseña||12345678|
-|Contraseña Actual (Opcional)||87654321|
 
 ### Cambiar Contraseña en el proximo inicio de sesión
   

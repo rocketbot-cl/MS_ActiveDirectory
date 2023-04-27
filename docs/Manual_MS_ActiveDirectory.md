@@ -58,9 +58,11 @@ Unlock a suspended or locked user in Microsoft Active Directory
 Change the password of a user in Microsoft Active Directory
 |Parameters|Description|example|
 | --- | --- | --- |
+|User with admin permissions||DOMAIN\username|
+|Password||password|
+|Server||server|
 |Username (DN or principal name)||cn=user1,o=test or username@domain.tld|
 |New Password||12345678|
-|Current Password (Optional)||87654321|
 
 ### Change Password at next login
   
