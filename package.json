@@ -7,7 +7,7 @@
         "pr": ""
     },
     "disclaimer":"THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY  APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-    "version":"1.1.0",
+    "version":"1.1.1",
     "license": "MIT",
     "homepage":"http://rocketbot.com",
     "linux":false,
@@ -344,6 +344,45 @@
                 "inputs": [
                     {
                         "type": "input",
+                        "placeholder": {
+                            "es": "DOMAIN\\username",
+                            "en": "DOMAIN\\username"
+                        },
+                        "title": {
+                            "es": "Usuario con permisos de administración",
+                            "en": "User with admin permissions"
+                        },
+                        "id": "username",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "password",
+                            "en": "password"
+                        },
+                        "title": {
+                            "es": "Contraseña",
+                            "en": "Password"
+                        },
+                        "id": "password",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "server",
+                            "en": "server"
+                        },
+                        "title": {
+                            "es": "Server",
+                            "en": "Server"
+                        },
+                        "id": "server",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
                         "title": {
                             "es": "Usuario (DN o nombre principal)",
                             "en": "Username (DN or principal name)"
@@ -356,7 +395,7 @@
                             "es": "Se puede utilizar 'DistinguishedName' (CN=Test,OU=US,OU=NA,OU=Employees,OU=Users,DC=domain,DC=com) ó 'UserPrincipalName' (username@domain.tld)",
                             "en": "It can be used 'DistinguishedName' (CN=Test,OU=US,OU=NA,OU=Employees,OU=Users,DC=domain,DC=com) or 'UserPrincipalName' (username@domain.tld)"
                         },
-                        "id": "username",
+                        "id": "user",
                         "css": "col-md-12"
                     },
                     {
@@ -370,23 +409,6 @@
                             "en": "12345678"
                         },
                         "id": "new_password",
-                        "css": "col-md-12"
-                    },
-                    {
-                        "type": "input",
-                        "title": {
-                            "es": "Contraseña Actual (Opcional)",
-                            "en": "Current Password (Optional)"
-                        },
-                        "placeholder": {
-                            "es": "87654321",
-                            "en": "87654321"
-                        },
-                        "help":{
-                            "es": "Si el usuario con el cual se conecto a AD mediante Rocketbot cuenta con los suficientes privilegios no necesita el password actual.",
-                            "en": "If the user with whom you connected to AD through Rocketbot has sufficient privileges, you do not need the current password."
-                        },
-                        "id": "old_password",
                         "css": "col-md-12"
                     }
                 ]

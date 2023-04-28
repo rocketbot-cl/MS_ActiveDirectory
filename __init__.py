@@ -158,13 +158,13 @@ if module == "unlock_user":
         raise e
 
 if module == "change_password":
-    import ldap3
-    user = GetParams("username")
+    username = GetParams("username")
+    password = GetParams("password")
+    server = GetParams("server")
+    user = GetParams("user")
     new_password = GetParams("new_password")
-    old_password = GetParams("old_password")
     
-    if not old_password or old_password == "":
-        old_password = None
+    import subprocess
     
     try:
         conn = mod_ms_activedirectory.get("connection")
@@ -181,9 +181,32 @@ if module == "change_password":
                             dn=entry.get("dn")
         else:
             dn = user
-            
-        pass_change = ldap3.extend.microsoft.modifyPassword.ad_modify_password(conn, dn, new_password, old_password,  controls=None)
-        print(pass_change)
+        
+        if username and password and server:
+            command =f"""$User = "{username}"
+            $PWord = ConvertTo-SecureString -String "{password}" -AsPlainText -Force
+            $Credential = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $User, $PWord
+            Set-ADAccountPassword -Server "{server}" -Credential $Credential -Identity '{dn}' -Reset -NewPassword (ConvertTo-SecureString -AsPlainText \"{new_password}\" -Force)"""
+        else:
+            command = f"Set-ADAccountPassword -Identity '{dn}' -Reset -NewPassword (ConvertTo-SecureString -AsPlainText \"{new_password}\" -Force)"
+        
+        
+        print(command)
+        print('powershell -command '+"'"+command+"'")
+        with open("ac.ps1", "w") as power:
+            power.write(command)
+        
+        #os.startfile("ac.ps1")
+        ps_file = os.path.join(base_path, "ac.ps1")
+        #powershell.exe -ExecutionPolicy RemoteSigned -file
+        process=subprocess.Popen(["powershell.exe", "-ExecutionPolicy", "RemoteSigned", "-file", ps_file], stderr=subprocess.PIPE,stdout=subprocess.PIPE, shell=False)
+        output, error = process.communicate()
+        #print("output: ", output.decode("latin-1"))
+        error = error.decode("latin-1")
+        os.remove("ac.ps1")
+
+        if error:
+            raise Exception(error)
         
         # conn.extend.microsoft.modify_password(dn, None, new_password)
         
