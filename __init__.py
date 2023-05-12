@@ -190,8 +190,6 @@ if module == "change_password":
         else:
             command = f"Set-ADAccountPassword -Identity '{dn}' -Reset -NewPassword (ConvertTo-SecureString -AsPlainText \"{new_password}\" -Force)"
         
-        
-        print(command)
         print('powershell -command '+"'"+command+"'")
         with open("ac.ps1", "w") as power:
             power.write(command)
