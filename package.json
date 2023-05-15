@@ -1,0 +1,600 @@
+{
+    "author":"Danilo Toro - ",
+    "description": "Module to connect with Microsoft Active Directory | Módulo para conectarse a Microsoft Active Directory",
+    "description_lang":{
+        "en":"Connect with Microsoft Active Directory, manage every user account within the domain, make queries and more.",
+        "es":"Conéctese con Microsoft Active Directory, administre todas los usuarios dentro del dominio, realice consultas y más.",
+        "pr": ""
+    },
+    "disclaimer":"THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY  APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
+    "version":"1.2.1",
+    "license": "MIT",
+    "homepage":"http://rocketbot.com",
+    "linux":false,
+    "windows":true,
+    "mac":false,
+    "docker":false,
+    "name": "MS_ActiveDirectory",
+    "dependencies": {
+    },
+    "title": {
+        "en": "MS_ActiveDirectory",
+        "es": "MS_ActiveDirectory",
+        "pr": ""
+    },
+    "icon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAABeQAAAXkBnwDpkQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAA+ZSURBVHicvZt5eFRVlsB/51VlMWwhSWVhMSwBUVoUFFAYt1YbG7XVtsHvm9Fv2v5GlqqkAvQ47bT0YLq/aZ0eR0JCVSQOajvdYys9jSsq2qiNsgiuoAKyQ1hSSQATlkpS78wf71Vlq6pUJcHzz7vv3nPPVvfdc+45t0RV+S5Bin3jMYx/Ai4GHQcMAtmM6oeI8ZpWzPu0x7S9/h3ARd1gvQU8AroROO7sKbNkQeZWDyIt9AiGFIN24qszEGaA+Yh4/UtpzFisz/z03Hci13exAizlWz8CxgJk9O+/eeiw4cGCIcOyAI7WHG6oqTmYfqbp9BR7yg6Mluu1vPR4UnwWPTkUJSUukgbPYhoncaQU0GyGzvsKEEEoaf0fYKwYUnvF1Gn7R44umtoeJ2/IEC6fPIU9u3Zt+vSjjWMUxmGmrARuS4pZq7kcZGR8pFTrEVJwUHfeV4B4fQtAloKcu3nmbUcys7JGxcOvrwvsWvfmmpFACjBPK9wrEueVyB7QAb6LPUDuBxg5pmhzZlbWdd1hZ+e4xhaOHPXegX17r0f5FyBhAyDqwTQGJIxv6LnzagDxVo4GxwREmidNvurqROddMeWqyQf27Q0hjBKPP1997mMJcrwJzIKOXcYqANSc1QVd5dR5M4AsenIoOBYDOB3OPYZhXJzoXEdKSj/D4dxthlqLMMzpwP8lNFG5C5GOn4DqDksg+ccoM/r+ExCv/3agFLgBMAAy+vdrSJZORkZ6XVNjUxFiPCalPgcVnlWqxN+wRKpRM7djn7HRapj/EQW/sc8MIAuqJmCaS0G+39arDSBZZ0+fHpwsvXNnzmbbzSJUXqCk6pdSbC7W5Z7XYk4ytQaMM5167ZVn7O86Qc/0iQHEW3UT6CsgF9hdH2Dqr0mRACE+bWlpGW2aZothGPF9tA2hUOvZ1lDI9hZSDvoPoJdhyKvi9W/E1Ad0uefLroJQBpqUF+i1G5SS5TMQ4yUgHdiIGou1ct66yLi3ajfo6KJxF78/8cop3XoBgK0bPnx/397d1wHbtcJ9qXgrB6LGQ4gsAC4AAph6Q2cjiLfqKWB44tJrQ68MIKW+maj8BUhDWU2z8x5dMaelk1D/BloGnJ1x+53HBw4aNCIezZMNDbvfXvPqcJumRyvd/ggtj384Dv4ETANqwXGDVsz9qscKYG9SPQEp9d+CshpIQ1hFTmB2Z+UBCDoeBdYDF6x97ZW0Qwf2fRyL5v69u7e888brA7CU/xtNGU+3H1ef+xBB50zgYyAXQutkoT9h7xJVj56sACkrc1Lv2gWMBJ7nmOs+fXFWKCb+gmV5mClbgWEAAwYO2jC8sDCUP2SYC+Do4cOBQwf3OZsaG+1YQT4n6LhOV8w5FZVesS8bQ94FLgU9SGO/i3p6eOqZAby+n4GsBI7SmDEqEeayaGUWoeDvUH4GSAy0EPA0hB7WipJAXHqWUT8H8kAXaoWnPGlF6IEBpKzMSZ1rJ8Io0FKt8FQkNb/UPw2VWaBTgIlAE8gu0O0YslTL5+9MnFaVB9XlQC1B50hdMaezC+wWkneD9a57LeU5QmO/6mSn6zL3BmADWCfFboObeHDOUU1q6yKEUaSFSoCuwU430JNN8Jf289HeJi16pTxgbbryK/vtQXnw8X7J0kjKAOLxDwfGAOA0VifL7LzA8vnPAwEgm2C/K5OdntwKcDDZbp3WJ+bVJMvsfIC9irbaL+OTnZ+cAZQwg13JMjqvoHwCgMF5NoBBf4uhJLxTfydgqBVcafIGSM4LKOkACMPF6/svMM6BuQecm3obkiYLsqD6QszWGSiDMSJ5wKQNkHAcIMW+sRjyKnZmNwq8g7DEdnPnDWSB/+8w5THQaUQLqJQ1OJzztXzOwYToJWIAKfHfg/AUMABoAT4HvkA0HTWmgo62UVtBH+xpVJaAHA8h/Ia2lbsb2IwVQU7F+nEEaAJ9mEpPZXeutlsDSIn/Vwi/trH/F1MXa2Xxvg441ur4b+AaAJQFWulelqyCceWIZJcBdB1O4wF9Yv7eTnIUYhgrQGfYcnQ4TUalG88AsvDJEYRCO0FSUf5VK92PxcQVBK//tygPAUEcXKVL3Z8lrGE8IUurrkDNDSCpCGVUuMvi/bL2SnkUaCTEePW5D8XCje8FQmYZSCrwbDzlwfbHR12LgU1AGqYsjks7GVBdYsvxfnfKA9iyrgUG4KAqHm5MA0jpijHAvUALav46ITlfnBXCwXzrxbxdin3Z3UzpFmTRyizgFpvmvITDZ4cx127dKgvLM2OhxVkBrWPs8c86f/Nxodz9OXAKJBXDuCrheTHFCH4fq0pUq5XFOxKdpkvn7Qe1PEEobVwsvNgGMCVcYfk6UaYQCU2tyEw6FSl6AsoguxUzkxR7roQDpJhZo9gGEAbazwti4sRkjAMAU1KTntsZDEm3iab1YLY9R/Niko85VbTRmstlSbMV/R4ADt2e9NzOoPqNTXSSSMxMUgw5uMJqmOtjocQ2gKP5ZeAkUCQL/ZcnzLPUdyNIFhDENHvvBkNsAFqBTLz+hOuLUuybBOQBJzmetykWXkwD6BMLzwLPAQYh/IlYX8rKDFSesAjo77Wi5NtEBY4ph8/dBLxi03xKvJXdfgoytzoFkZX267p4Cdv4cYDIc3braop9z8jc6ow4TAfRkPsyMMEW/blYuElDiAVYucNLwFEti5bG3JfEW5lGWsiPEF6118rC6pibcfxI0Fv1HOh9bT36FRhuGi/YHE6HydzqDFJapmPIcjoelN7UCvcPE1IwAZAS/18Q7rJfd6HGfJqN9eFahJWqz50Opt8yFArUAMNA15Fdd7MuWWJ2oRvLAOL1PwBUAyZouX3RIVzkbAG2YR1CJtJ2ODkK+juQR4F0ULdWeOJGYgkpX+q7A5WX7NdzFm0AgsA2lBDCZe3661DzXkR3g+NTYADCYl3m/vfOtKN+AvamZ6W7lUe0wvNzUp1jgaewNqQUYBIwGUv5swh+gs6LtcJTjoYTp/K4HVH2XHmPfzhKuEK0nBajEOS3wCksN3clwlRb+TpUfw+hiVpZ/JZWlOwBisN6SKl/Whf60VaAlPjfR7gWeJNK98z24aeUrUql7vhFYFwC4kCMzziWtbP9RiNlZQb1rveAaxD+oMvc93VhkqgBvP5ngJ+ifIaErtKKkqDVXzkQlUsRIwuRLNBvyApsirrMvf4/AfcAH2iF+5q4BrASDqwHWnEYY6yQsgeCt9EJkuocpo/PqUuahlUM3QOkYHCNlrs/6JEsxb5CDNkLGIhxqS6bF4lPun4CJg/brRd6qjyALex2II3mlvt7RMTJz4EUkA97qjyALvccQGSN9WbObz/WwQBS7Cuk7eSVdJWlK+fwUVSS/gRkbnWKXUcEtPeyYFbZMv29lJVF9O64AhzcbLe2a2Xxtl7zVH3dbo2XXzyd+PU1gNTm6VgpuFMcc63ptSxZue9geY1M6vMjp8NOn4D8wHrq2l4zxF56cBwwOHcuuaqNYcywW3+NF8klLMuSWc0oVmiuZuSmakcDKPYFJ3mrtwzbEd1sPWRKN4idpnGTJUofyiJYshgakSViALuwaGVwHM7eL/8wKAcsBrGPpDFgBAAhs+9kETlgN1zhrrYVEOoXFjBEzeDavmNKuGafcF5BZq9yEP4xUhxH+0wWMyJL5EDVZoBWwhcMa/vim2sD+96eqYknVlwBF+GiR6il7wwgahtAoxhAIgI29xlDCyxmIonfBUg1wjG9SXZD14tXvZVFJRItthnANMORWk4fMiRSNVL2doPYBs6m8P0gg8aCrD6XRTSS5G3vBertZz+5/9l0+g6KLE6acEVZ//OfTwOnAQg2990PIoYli7I73NVWHTaNb+1UJgw4s1a8vi8Q1ugyT9JBiH2B8m6UwYhdsVXHN0kRUU4i9EOMP0iJ72MM3qXC80Ky12qk1HcXatwM5kUgkyzasicyrqr2YYEXIYqvVtZgco+dmorPbGF5JqG010CnRxleC6FZ3aXJLBqpzwB3RhnehMP5Y106p9uN0bpLaPwZ9Poowx8T4jb1uY8JjzzipN71GTAekYahw4Z/MXBgpuPY8RpO1NVfDTgRVuky9+y4DGevcpBfu8E24um8goKt2TkuIxCoNQPHjk8FTQfWa4X72rh0SvyvI8wEOePKz9/icrmMQCBgBo4dmwyaAWwg6Lw+6q3UMI251Smktb4NXAe0ZOW4NublFcjJkydCR2sOTwQdBOwg6JzgpD7nAWC8GFI78867NSOj3/UA32Mihw4c+GTT+vcuR5klxb6rdblnY0zJ8wN32Mo3/eC2HwUGZQ6OXIyuC9TuePetN0YC10ip7w5d5nk5quCl/lvCyt/0w1uPDM7OjtA4UV+/+503Xh8COo201p8Az8eUJa11tq18aPoNN341ZOiwiNGbGhuPvPnK6pCqjiM9NM8Ix/9F4y7ZkZHRr0O0NrywcFL/Af0/AsAw7iIeKPcCDL3wwq2DMgd3+OdWjit3XE5unh0SG7H/CWZyI0B+QcGWwdnZRe2HBmdnF+UXFGwBaJcbjAWzAAZmZm4aMnRYh7pG/wEDhowqGmNFl6p3GNi7dF5uftQC4uAsl30XUOMXOoUsgNy8/Khpa5crz06r64iYNOyrLjl5+VGv7kT6tS2UjQpKPkB2jqs1qiz5+fbJVEYYKN8ANNQHol5MPnXqhP0nB6mPNt4OzgI01NUFow02NASs4EM19vU60/LPJ+rron7fbf0aVdYIGHwLcPJEQ9ScZ30gYG/oethA9G2Ar7/cPqK5ubnDDh0I1H797cmTlmcwzO7+uPQSwMH9+yacOXO6wz8+vz116uDxo0etMpXwt9gkZB1AzaFDE5saG4+0H2lqbDxSc+jQREtu+XNcSdQqpJyor59yor6+g/sNBoMndu/cOcbG+0CY9aKD/MAnwAQxjJqiMRftGZSVlX6s5vCZwwcPTgHNQFmjle5b4/EUb+VAcGwBxopI3Yiioi9zsl0Zgdrjp/fv23M5SiawlaBzWtwd3PYCItJQOHL0NldubkagtvbMgX17LlXVLGAbQecVcWn84ukBnDn3NcJQ4PTwwsIteUOGZZw80XB2z86dY1XNAuA4rXKxFQdYycfVEC4mdoC1BJ13JXITWzz+IhysxfofQefRz3Hy4873erpgLSzPpDX1j5Y36ALbaDFu0qp53Z5WpWT5OMR4H8iNMlyHMFuXud+NZIXl/mfT6X/2J4jejkgGmAHgj7rM89fumHVg7K1MQx1uhJuBCxHZh6nvkOOq0iWzEjpoSVmZQV3uj8C8E8SFQQPKao65Xk7mpCqLVmbRElyEcDfgAuqAt3A4HwsHU/8PHW8UvUx+Od8AAAAASUVORK5CYII=",
+    "children": [
+
+        {
+            "en": {
+                "title": "Connect",
+                "description": "Connect to Microsoft Active Directory",
+                "title_options": "Select Option",
+                "options":null
+            },
+            "es": {
+                "title": "Conectar",
+                "description": "Conectar con Microsoft Active Directory",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "ldap://your-domain-controller",
+                            "en": "ldap://your-domain-controller"
+                        },
+                        "title": {
+                            "es": "Dominio del active directory",
+                            "en": "Active Directory Domain"
+                        },
+                        "help": {
+                            "es": "Agregar el prefijo ldap://",
+                            "en": "Add the ldap:// prefix"
+                        },
+                        "id": "domain",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "OU=Groups,OU=UserProvisioning",
+                            "en": "OU=Groups,OU=UserProvisioning"
+                        },
+                        "title": {
+                            "es": "Grupo de usuarios o base de búsqueda",
+                            "en": "User group or search base"
+                        },
+                        "id": "base",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "DOMAIN\\username",
+                            "en": "DOMAIN\\username"
+                        },
+                        "title": {
+                            "es": "Usuario con permisos de lectura",
+                            "en": "User with read permissions"
+                        },
+                        "id": "username",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "password",
+                            "en": "password"
+                        },
+                        "title": {
+                            "es": "Contraseña",
+                            "en": "Password"
+                        },
+                        "id": "password",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "Variable",
+                            "en": "Variable"
+                        },
+                        "title": {
+                            "es": "Indique nombre de la variable donde almacenar respuesta",
+                            "en": "Indicate the name of the variable where to store the response"
+                        },
+                        "id": "var_",
+                        "remove_vars": true,
+                        "css": "col-md-12"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,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",
+            "module": "connect",
+            "module_name": "MS_ActiveDirectory",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux":false,
+            "windows":true,
+            "mac":false,
+            "docker":false
+        },
+        
+        {
+            "en": {
+                "title": "Run query",
+                "description": "Run query in Microsoft Active Directory",
+                "title_options": "Select Option",
+                "options":null
+            },
+            "es": {
+                "title": "Ejecutar consulta",
+                "description": "Ejecutar consulta en Microsoft Active Directory",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "(&(objectClass=user)(objectCategory=person)(sAMAccountName={0}))",
+                            "en": "(&(objectClass=user)(objectCategory=person)(sAMAccountName={0}))"
+                        },
+                        "title": {
+                            "es": "Consulta",
+                            "en": "Query"
+                        },
+                        "help": {
+                            "es": "Ej. (&(objectClass=user)(objectCategory=person)(sAMAccountName={0}))",
+                            "en": "E.g. (&(objectClass=user)(objectCategory=person)(sAMAccountName={0}))"
+                        },
+                        "id": "query",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "cn, givenName, sn, userPrincipalName",
+                            "en": "cn, givenName, sn, userPrincipalName"
+                        },
+                        "title": {
+                            "es": "Atributos",
+                            "en": "Attributes"
+                        },
+                        "help": {
+                            "es": "Lista de atributos a obtener en la respuesta separados por coma.",
+                            "en": "List of attributes to obtain in the response separated by commas."
+                        },
+                        "id": "response",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "Variable",
+                            "en": "Variable"
+                        },
+                        "title": {
+                            "es": "Indique nombre de la variable donde almacenar respuesta",
+                            "en": "Indicate the name of the variable where to store the response"
+                        },
+                        "id": "var_",
+                        "remove_vars": true,
+                        "css": "col-md-12"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,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",
+            "module": "run_query",
+            "module_name": "MS_ActiveDirectory",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux":false,
+            "windows":true,
+            "mac":false,
+            "docker":false
+        },
+        {
+            "en": {
+                "title": "Enable/Disable User",
+                "description": "Enables or disables a user in Microsoft Active Directory",
+                "title_options": "Select Option",
+                "options":null
+            },
+            "es": {
+                "title": "Habilitar/Deshabilitar Usuario",
+                "description": "Habilita o deshabilita un usuario en Microsoft Active Directory",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Usuario (DN o nombre principal)",
+                            "en": "Username (DN or principal name)"
+                        },
+                        "placeholder": {
+                            "es": "cn=user1,o=test ó username@domain.tld",
+                            "en": "cn=user1,o=test or username@domain.tld"
+                        },
+                        "help": {
+                            "es": "Se puede utilizar 'DistinguishedName' (CN=Test,OU=US,OU=NA,OU=Employees,OU=Users,DC=domain,DC=com) ó 'UserPrincipalName' (username@domain.tld)",
+                            "en": "It can be used 'DistinguishedName' (CN=Test,OU=US,OU=NA,OU=Employees,OU=Users,DC=domain,DC=com) or 'UserPrincipalName' (username@domain.tld)"
+                        },
+                        "id": "username",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "select",
+                        "title": {
+                            "es": "Acción",
+                            "en": "Action"
+                        },
+                        "options": [
+                            {
+                                "title":" --- Select --- ",
+                                "value":""
+                            },
+                            {
+                                "title":"Enable",
+                                "value":"512"
+                            },
+                            {
+                                "title":"Disable",
+                                "value":"514"
+                            }
+
+                        ],
+                        "id": "action",
+                        "css": "col-md-12"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,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",
+            "module": "enable_disable_user",
+            "module_name": "MS_ActiveDirectory",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux":false,
+            "windows":true,
+            "mac":false,
+            "docker":false
+        },
+        {
+            "en": {
+                "title": "Unlock User",
+                "description": "Unlock a suspended or locked user in Microsoft Active Directory",
+                "title_options": "Select Option",
+                "options":null
+            },
+            "es": {
+                "title": "Desbloquear Usuario",
+                "description": "Desbloquear un usuario suspendido o bloqueado en Microsoft Active Directory",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Usuario (DN o nombre principal)",
+                            "en": "Username (DN or principal name)"
+                        },
+                        "placeholder": {
+                            "es": "cn=user1,o=test ó username@domain.tld",
+                            "en": "cn=user1,o=test or username@domain.tld"
+                        },
+                        "help": {
+                            "es": "Se puede utilizar 'DistinguishedName' (CN=Test,OU=US,OU=NA,OU=Employees,OU=Users,DC=domain,DC=com) ó 'UserPrincipalName' (username@domain.tld)",
+                            "en": "It can be used 'DistinguishedName' (CN=Test,OU=US,OU=NA,OU=Employees,OU=Users,DC=domain,DC=com) or 'UserPrincipalName' (username@domain.tld)"
+                        },
+                        "id": "username",
+                        "css": "col-md-12"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,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",
+            "module": "unlock_user",
+            "module_name": "MS_ActiveDirectory",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux":false,
+            "windows":true,
+            "mac":false,
+            "docker":false
+        },
+        {
+            "en": {
+                "title": "Change User Password",
+                "description": "Change the password of a user in Microsoft Active Directory",
+                "title_options": "Select Option",
+                "options":null
+            },
+            "es": {
+                "title": "Cambiar Contraseña de Usuario",
+                "description": "Cambia la contraseña de un usuario en Microsoft Active Directory",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "DOMAIN\\username",
+                            "en": "DOMAIN\\username"
+                        },
+                        "title": {
+                            "es": "Usuario con permisos de administración",
+                            "en": "User with admin permissions"
+                        },
+                        "id": "username",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "password",
+                            "en": "password"
+                        },
+                        "title": {
+                            "es": "Contraseña",
+                            "en": "Password"
+                        },
+                        "id": "password",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "placeholder": {
+                            "es": "server",
+                            "en": "server"
+                        },
+                        "title": {
+                            "es": "Server",
+                            "en": "Server"
+                        },
+                        "id": "server",
+                        "css": "col-md-6"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Usuario (DN o nombre principal)",
+                            "en": "Username (DN or principal name)"
+                        },
+                        "placeholder": {
+                            "es": "cn=user1,o=test ó username@domain.tld",
+                            "en": "cn=user1,o=test or username@domain.tld"
+                        },
+                        "help": {
+                            "es": "Se puede utilizar 'DistinguishedName' (CN=Test,OU=US,OU=NA,OU=Employees,OU=Users,DC=domain,DC=com) ó 'UserPrincipalName' (username@domain.tld)",
+                            "en": "It can be used 'DistinguishedName' (CN=Test,OU=US,OU=NA,OU=Employees,OU=Users,DC=domain,DC=com) or 'UserPrincipalName' (username@domain.tld)"
+                        },
+                        "id": "user",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Nueva Contraseña",
+                            "en": "New Password"
+                        },
+                        "placeholder": {
+                            "es": "12345678",
+                            "en": "12345678"
+                        },
+                        "id": "new_password",
+                        "css": "col-md-12"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,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",
+            "module": "change_password",
+            "module_name": "MS_ActiveDirectory",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux":false,
+            "windows":true,
+            "mac":false,
+            "docker":false
+        },
+        {
+            "en": {
+                "title": "Change Password at next login",
+                "description": "Make a user change its password at the next login in Microsoft Active Directory",
+                "title_options": "Select Option",
+                "options":null
+            },
+            "es": {
+                "title": "Cambiar Contraseña en el proximo inicio de sesión",
+                "description": "Hacer que un usuario cambie su contraseña en el próximo inicio de sesión en Microsoft Active Directory",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Usuario (DN o nombre principal)",
+                            "en": "Username (DN or principal name)"
+                        },
+                        "placeholder": {
+                            "es": "cn=user1,o=test ó username@domain.tld",
+                            "en": "cn=user1,o=test or username@domain.tld"
+                        },
+                        "help": {
+                            "es": "Se puede utilizar 'DistinguishedName' (CN=Test,OU=US,OU=NA,OU=Employees,OU=Users,DC=domain,DC=com) ó 'UserPrincipalName' (username@domain.tld)",
+                            "en": "It can be used 'DistinguishedName' (CN=Test,OU=US,OU=NA,OU=Employees,OU=Users,DC=domain,DC=com) or 'UserPrincipalName' (username@domain.tld)"
+                        },
+                        "id": "username",
+                        "css": "col-md-12"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,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",
+            "module": "next_login_change_password",
+            "module_name": "MS_ActiveDirectory",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux":false,
+            "windows":true,
+            "mac":false,
+            "docker":false
+        },
+        {
+            "en": {
+                "title": "Create User",
+                "description": "Create a user from Microsoft Active Directory",
+                "title_options": "Select Option",
+                "options":null
+            },
+            "es": {
+                "title": "Crear Usuario",
+                "description": "Crear un usuario en Microsoft Active Directory",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Usuario DN",
+                            "en": "User DN"
+                        },
+                        "placeholder": {
+                            "es": "cn=user1,o=test",
+                            "en": "cn=user1,o=test"
+                        },
+                        "help": {
+                            "es": "Ejemplo de 'DistinguishedName': CN=Test,OU=US,OU=NA,OU=Employees,OU=Users,DC=domain,DC=com",
+                            "en": "Example for 'DistinguishedName': CN=Test,OU=US,OU=NA,OU=Employees,OU=Users,DC=domain,DC=com"
+                        },
+                        "id": "user_dn",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Clases",
+                            "en": "Classes"
+                        },
+                        "placeholder": {
+                            "es": "['employee', 'person', 'organization', 'user']",
+                            "en": "['employee', 'person', 'organization', 'user']"
+                        },
+                        "id": "classes",
+                        "css": "col-md-12"
+                    },
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Atributos",
+                            "en": "Attributes"
+                        },
+                        "placeholder": {
+                            "es": "{'givenName': 'Test', 'sn': 'User', 'mail': 'test.user@domain.com', 'sAMAccountName': 'testuser'}",
+                            "en": "{'givenName': 'Test', 'sn': 'User', 'mail': 'test.user@domain.com', 'sAMAccountName': 'testuser'}"
+                        },
+                        "id": "attributes",
+                        "css": "col-md-12"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,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",
+            "module": "create_user",
+            "module_name": "MS_ActiveDirectory",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux":false,
+            "windows":true,
+            "mac":false,
+            "docker":false
+        },
+        {
+            "en": {
+                "title": "Delete User",
+                "description": "Delete a user from Microsoft Active Directory",
+                "title_options": "Select Option",
+                "options":null
+            },
+            "es": {
+                "title": "Borrar Usuario",
+                "description": "Borrar un usuario en Microsoft Active Directory",
+                "title_options": "Seleccione una opción",
+                "options": null
+            },
+            "form": {
+                "css": "modal-lg",
+                "inputs": [
+                    {
+                        "type": "input",
+                        "title": {
+                            "es": "Usuario (DN o nombre principal)",
+                            "en": "Username (DN or principal name)"
+                        },
+                        "placeholder": {
+                            "es": "cn=user1,o=test ó username@domain.tld",
+                            "en": "cn=user1,o=test or username@domain.tld"
+                        },
+                        "help": {
+                            "es": "Se puede utilizar 'DistinguishedName' (CN=Test,OU=US,OU=NA,OU=Employees,OU=Users,DC=domain,DC=com) ó 'UserPrincipalName' (username@domain.tld)",
+                            "en": "It can be used 'DistinguishedName' (CN=Test,OU=US,OU=NA,OU=Employees,OU=Users,DC=domain,DC=com) or 'UserPrincipalName' (username@domain.tld)"
+                        },
+                        "id": "username",
+                        "css": "col-md-12"
+                    }
+                ]
+            },
+            "video_youtube": "",
+            "icon": "data:image/png;base64,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",
+            "module": "delete_user",
+            "module_name": "MS_ActiveDirectory",
+            "visible": true,
+            "options": false,
+            "father": "module",
+            "group": "scripts",
+            "linux":false,
+            "windows":true,
+            "mac":false,
+            "docker":false
+        }
+    ]
+}
