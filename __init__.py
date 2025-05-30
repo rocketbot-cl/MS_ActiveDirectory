@@ -101,7 +101,7 @@ if module == "run_query":
         
         SetVar(var_, data_str)
     except Exception as e:
-        SerVar(var_, False)
+        SetVar(var_, False)
         PrintException()
         traceback.print_exc()
         raise e
